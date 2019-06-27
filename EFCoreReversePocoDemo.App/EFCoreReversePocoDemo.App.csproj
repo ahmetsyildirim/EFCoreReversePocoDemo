@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.3.0-preview6-19304-03" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>EntityFramework</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Database1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Database1.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Database1.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Database1.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>
